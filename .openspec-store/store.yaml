@@ -1,0 +1,3 @@
+version: 1
+id: sdd-demo-api-contracts
+remote: https://github.com/fasteque/sdd-demo-api-contracts.git
