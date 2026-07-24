@@ -2,19 +2,30 @@ schema: spec-driven
 
 # Project context (optional)
 # This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+context: |
+  This is a store repo: a standalone OpenSpec planning repository, not a code repo.
+  It holds platform-wide API conventions and contracts consumed by multiple independent
+  microservices (currently: sdd-demo / Asset Management, sdd-demo-products / Product
+  Management, and future services). There is no application code here.
+
+  Everything defined in this repo must be genuinely service-agnostic: no references to
+  any single service's specific field names, endpoints, or domain model. If a rule only
+  makes sense for one service, it does not belong here — it belongs in that service's
+  own openspec/specs/.
+
+  Reusable technical artifacts (JSON Schema files, etc.) live under schemas/, referenced
+  from specs, not duplicated inline.
 
 # Per-artifact rules (optional)
 # Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+rules:
+  proposal:
+    - Keep proposals concise and readable by a non-developer (Product Owner)
+    - Always include a "Non-goals" section
+    - Explicitly name which consuming services/teams are affected and how they should migrate
+  design:
+    - Never bake in details specific to one consuming service (e.g. exact field names from a single service's API) — conventions here must generalize
+    - When defining a shape or rule, state it precisely enough to be mechanically testable later (schema, linter), even if enforcement tooling isn't built yet
+  tasks:
+    - Break tasks into small, independently testable chunks
+    - Distinguish clearly between tasks that produce artifacts (schemas, docs) and tasks that require real-world coordination (team review, announcements, ownership decisions) — do not silently mark coordination tasks as done
