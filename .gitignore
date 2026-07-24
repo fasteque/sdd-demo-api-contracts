@@ -1,0 +1,15 @@
+# IntelliJ / JetBrains IDE settings (personal, machine-specific)
+.idea/
+*.iml
+
+# VS Code (in case anyone opens this repo there instead)
+.vscode/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor swap/backup files
+*~
+*.swp
+*.swp.*
