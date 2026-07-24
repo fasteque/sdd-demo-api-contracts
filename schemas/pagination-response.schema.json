@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.internal/platform/pagination-response.schema.json",
+  "title": "Standard Paginated List Response",
+  "description": "Canonical shape for the JSON body of paginated list endpoints across platform microservices. See openspec/specs/api-pagination/spec.md for the normative requirements. Services should compose this with their own `data` item schema via $ref/allOf.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "description": "The page of items. Item shape is defined per-endpoint."
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "1-indexed current page number."
+        },
+        "pageSize": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of items requested per page."
+        },
+        "hasNextPage": {
+          "type": "boolean"
+        },
+        "hasPreviousPage": {
+          "type": "boolean"
+        },
+        "totalItems": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Optional. Total number of items across all pages."
+        },
+        "totalPages": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Optional. Must equal ceil(totalItems / pageSize) when both are present."
+        }
+      },
+      "required": ["page", "pageSize", "hasNextPage", "hasPreviousPage"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["data", "pagination"],
+  "additionalProperties": false
+}

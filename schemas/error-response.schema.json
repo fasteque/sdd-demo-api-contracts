@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.internal/platform/error-response.schema.json",
+  "title": "Standard API Error Response",
+  "description": "Canonical shape for the JSON body of any 4xx or 5xx HTTP response across platform microservices. See openspec/specs/api-error-responses/spec.md for the normative requirements.",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "description": "Stable, machine-readable SCREAMING_SNAKE_CASE identifier. Must not change when `message` text changes."
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable description of the error. May change wording without being a breaking change."
+        },
+        "traceId": {
+          "type": "string",
+          "description": "Identifier correlating this response to server-side logs/tracing."
+        },
+        "details": {
+          "type": "array",
+          "description": "Field-level validation issues. Present for validation-style errors (typically 400/422).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "description": "camelCase name of the offending field."
+              },
+              "code": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9_]*$"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": ["field", "code", "message"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["code", "message", "traceId"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["error"],
+  "additionalProperties": false
+}
