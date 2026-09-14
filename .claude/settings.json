@@ -23,12 +23,6 @@
       "Bash(gh pr *)",
       "Bash(gh issue *)"
     ],
-    "ask": [
-      "Bash(git commit *)",
-      "Bash(git push *)",
-      "Bash(git reset *)",
-      "Bash(curl *)"
-    ],
     "deny": [
       "Bash(git rm *)",
       "Bash(git reset --hard*)",
@@ -41,6 +35,15 @@
       "Bash(git checkout -- *)",
       "Bash(git branch -D*)",
       "Bash(taskkill*)"
+    ],
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git reset *)",
+      "Bash(curl *)"
     ]
+  },
+  "enabledPlugins": {
+    "compound-engineering@compound-engineering-plugin": true
   }
 }
