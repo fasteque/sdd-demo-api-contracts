@@ -17,8 +17,8 @@ There is no application code here. There is nothing to build, test, or run.
 
 ## Workflow
 
-Standard OpenSpec only: `/opsx:propose` → human review → `/opsx:apply` → `/opsx:archive`.
-Since there is no code, `/opsx:apply` typically only produces documentation and shared
+Standard OpenSpec only: `/enspec-propose` → human review → `/openspec-apply-change` → `/openspec-archive-change`.
+Since there is no code, `/openspec-apply-change` typically only produces documentation and shared
 schema artifacts under `schemas/`, not application code.
 
 ## Rules

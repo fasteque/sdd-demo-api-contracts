@@ -61,8 +61,8 @@ where to look. See [`sdd-demo`](https://github.com/fasteque/sdd-demo)'s
 
 ## Workflow
 
-Standard OpenSpec only, no Compound Engineering: `/opsx:propose` → human review
-→ `/opsx:apply` → `/opsx:sync` → `/opsx:archive`. Since there's no code, `apply`
+Standard OpenSpec only, no Compound Engineering: `/openspec-propose` → human review
+→ `/openspec-apply-change` → `/openspec-sync-specs` → `/openspec-archive-change`. Since there's no code, `apply`
 typically produces documentation and shared schema files rather than
 implementation. Tasks requiring real-world coordination (team review, rollout
 announcements, ownership decisions) are deliberately left unchecked in

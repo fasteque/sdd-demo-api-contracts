@@ -20,4 +20,4 @@
 
 - **Affected systems**: CI pipelines for all microservices; potentially the API gateway if validation happens at the edge.
 - **Affected code**: New tooling/CI jobs; no changes to the convention specs themselves.
-- **Status**: This proposal is filed as a backlog placeholder. Design, specs, and tasks are not yet written — pick this change back up with `/opsx:propose define-api-contract-enforcement` (or `/opsx:update`) when ready to scope it.
+- **Status**: This proposal is filed as a backlog placeholder. Design, specs, and tasks are not yet written — pick this change back up with `/openspec-propose define-api-contract-enforcement` (or `/openspec-update-change`) when ready to scope it.

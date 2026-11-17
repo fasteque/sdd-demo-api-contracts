@@ -20,7 +20,7 @@ representative from each service team. Full detail is in `proposal.md`,
 ## How to record feedback
 
 Capture feedback inline in this file (or link to meeting notes), then use
-`/opsx:update define-api-conventions` to fold agreed changes back into the
+`/openspec-update-change define-api-conventions` to fold agreed changes back into the
 spec files before checking off tasks 1.1/1.3 in `tasks.md`.
 
 **Status:** Not yet reviewed with service teams.
